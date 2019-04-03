@@ -30,5 +30,3 @@ For at least one of your user roles, choose a person's name to represent that pe
 
 3. As Sunny, I want to receive errors if the application runs into errors.
 
-4. As Bryan, I want to fill out infos for my dashboard by listing out my skills
-

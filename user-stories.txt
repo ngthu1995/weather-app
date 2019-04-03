@@ -1,0 +1,34 @@
+Write at least ten user stories relevant to your idea. Be sure they follow the form described at the start of this checkpoint
+
+1. As a developer, I want to scaffold my server-side and client-side applications and set up for Heroku deployment.
+
+2. As a user, I want to sign up for free email subscription.
+
+3. As a user, I want to unsubscribe daily weather infomation.
+
+4. Aa a user, I want to see the current weather of my location.
+
+5. As a user, I want to search the weather of other locations.
+
+6. As a user, I want to see some helpful tips if I run into errors.
+
+7. As a user, I want to see the weather in other location in the next 10 days.
+
+8. As a developer, I want to be notified if there is any errors when validation is invalid.
+
+9. As a user, I want to use the application in browser, not in command line interface.
+
+10. As a user, I want the browser is user-friendly, mobile-friendly and responsive.
+
+
+
+For at least one of your user roles, choose a person's name to represent that persona. Write at least a sentence or two for that persona that describes the person it's meant to represent.
+
+1. As Sunny, I want to be able to see weather in my location without typing when I first visit the browser.
+
+2. As Sunny, I want to be able to see weather for my next trip in California in 10 days.
+
+3. As Sunny, I want to receive errors if the application runs into errors.
+
+4. As Bryan, I want to fill out infos for my dashboard by listing out my skills
+

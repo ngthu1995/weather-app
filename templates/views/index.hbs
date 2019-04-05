@@ -5,25 +5,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="img/logo-weather-app.png">
     <link rel="stylesheet" href="/css/style.css" />
 
-    <title>Weather</title>
+    <title>Anisoptera</title>
 </head>
 
 <body>
 
     <div class="main-content">
         {{>header}}
-        <h2>Anything is here</h2>
+        <div class="weather-content">
+            <form>
+                <div class="search-log">
+                    <input placeholder="Enter your location, ZIP code">
+                    <img id="search-icon" src="img/search-icons.png" alt="search-icon">
+                </div>
+            </form>
 
-        <form>
-            <input placeholder="Location">
-            <button>Search</button>
-        </form>
+            <div class="weather-data">
+                <div class="col-left-70  ">
+                    <div id="message-1" class="text-small"></div>
+                    <div id="message-2" class="text-small"></div>
+                </div>
+                <div class="col-right-30">
+                    <div id="message-3" class="text-big"></div>
+                    <div><img src="" id="weather-icon" alt=""></div>
+                </div>
 
-        <p id="message-1"></p>
+            </div>
 
-        <p id="message-2"></p>
+        </div>
     </div>
 
     {{>footer}}

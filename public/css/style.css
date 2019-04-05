@@ -1,12 +1,18 @@
 body {
-  color: #333333;
+  color: #414042;
   font-family: "Courier New", Courier, monospace;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 16px;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 footer {
@@ -21,14 +27,8 @@ header {
   margin: 16px 0;
 }
 
-header a {
-  color: #888888;
-  margin-right: 16px;
-  text-decoration: none;
-}
-
-h1 {
-  font-size: 64px;
+h2 {
+  font-size: 48px;
   margin-bottom: 16px;
 }
 
@@ -41,12 +41,108 @@ h1 {
 }
 
 input {
-  border: 1px solid #cccccc;
-  padding: 8x;
+  border-width: 0px;
+  border: none;
+  width: 80%;
+  padding: 0 15px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
 }
 
 button {
   cursor: pointer;
   border: 1px solid #888888;
   background: #888888;
+}
+
+.weather-content {
+  padding: 120px 90px 50px 90px;
+}
+
+.search-log {
+  border: 1.5px solid #c2c2c2;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #c2c2c2;
+  padding: 10px 0;
+}
+
+.nav-bar a {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #888888;
+  text-decoration: none;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+/* .nav-bar a:nth-child(1) {
+  border-right: 1.5px solid #c2c2c2;
+}
+
+.nav-bar a:nth-child(2) {
+  border-right: 1.5px solid #c2c2c2;
+} */
+
+.nav-bar a:hover {
+  border-bottom: 1.5px solid #c2c2c2;
+}
+
+/* .nav-bar a:active {
+  text-decoration: line-through;
+} */
+
+@media only screen and (max-width: 800px) {
+  .bar {
+    flex-direction: column;
+  }
+}
+
+.weather-data {
+  margin-top: 60px;
+  display: none;
+  width: 100%;
+  align-items: stretch;
+}
+
+#message-1 {
+  border-bottom: 1.5px solid #c2c2c2;
+}
+
+.col-left-70 {
+  width: 70%;
+}
+
+.col-right-30 {
+  width: 30%;
+  border-left: 1.5px solid #c2c2c2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-big {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.text-small {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 0;
+}
+
+.text-center {
+  text-align: center;
 }

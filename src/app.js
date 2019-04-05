@@ -26,7 +26,6 @@ app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
   res.render("index", {
-    title: "Weather App",
     name: "Tina Nguyen"
   });
 });
@@ -65,7 +64,16 @@ app.get("/weather", (req, res) => {
           return res.render({ error });
         }
         res.send({
-          forecast: forecastData,
+          forecastSummary: forecastData.daily.data[0].summary,
+          forecastCurrentTemperature:
+            forecastData.currently["temperature"] + "°",
+          forecastHighTemperature:
+            "High : " + forecastData.daily.data[0].temperatureHigh,
+          forecastLowTemperature:
+            "Low : " + forecastData.daily.data[0].temperatureLow,
+          forecastPreciptProbability:
+            "Precipitation : " + forecastData.currently["precipProbability"],
+          forecastIcon: forecastData.currently.icon,
           location,
           address: req.query.address
         });

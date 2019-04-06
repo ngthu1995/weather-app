@@ -26,22 +26,23 @@ app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
   res.render("index", {
-    name: "Tina Nguyen"
+    name: "Thu Nguyen"
   });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", {
-    title: "About Me",
-    name: "Tina Nguyen"
+    title: "About",
+    name: "Thu Nguyen"
   });
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
-    message: "Please help me!",
+    message:
+      "Run into errors? Have questions about the application? Don't hesistate to let me know your opinion to",
     title: "Help",
-    name: "Tina Nguyen"
+    name: "Thu Nguyen"
   });
 });
 
@@ -65,15 +66,19 @@ app.get("/weather", (req, res) => {
         }
         res.send({
           forecastSummary: forecastData.daily.data[0].summary,
+          forecastCurrentSummary: forecastData.currently.summary,
           forecastCurrentTemperature:
-            forecastData.currently["temperature"] + "°",
+            forecastData.currently["temperature"] + "°F",
           forecastHighTemperature:
-            "High : " + forecastData.daily.data[0].temperatureHigh,
+            "High : " + forecastData.daily.data[0].temperatureHigh + "°F",
           forecastLowTemperature:
-            "Low : " + forecastData.daily.data[0].temperatureLow,
+            "Low : " + forecastData.daily.data[0].temperatureLow + "°F",
           forecastPreciptProbability:
-            "Precipitation : " + forecastData.currently["precipProbability"],
+            "Precipitation : " +
+            forecastData.currently["precipProbability"] +
+            "%",
           forecastIcon: forecastData.currently.icon,
+          forecastWind: "Wind : " + forecastData.currently.windSpeed + " km/h",
           location,
           address: req.query.address
         });

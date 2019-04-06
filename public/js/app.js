@@ -10,6 +10,18 @@ const messageTwo = document.querySelector("#message-2");
 
 const messageThree = document.querySelector("#message-3");
 
+const messageFour = document.querySelector("#message-4");
+
+const messageFive = document.querySelector("#message-5");
+
+const messageSix = document.querySelector("#message-6");
+
+const messageSeven = document.querySelector("#message-7");
+
+const messageEight = document.querySelector("#message-8");
+
+const messageError = document.querySelector("#message-error");
+
 const iconWeather = document.querySelector("#weather-icon");
 
 const weatherData = document.querySelector(".weather-data");
@@ -19,21 +31,35 @@ weatherForm.addEventListener("submit", event => {
 
   const location = search.value;
   console.log(location);
-  weatherData.style.display = "flex";
 
   messageOne.textContent = "Loading ...";
   messageTwo.textContent = "";
   messageThree.textContent = "";
+  messageFour.textContent = "";
+  messageFive.textContent = "";
+  messageSix.textContent = "";
+  messageSeven.textContent = "";
+  messageEight.textContent = "";
+  messageError.textContent = "";
 
   fetch("/weather?address=" + location).then(response => {
+    weatherData.style.display = "none";
     response.json().then(data => {
       if (data.error) {
-        return (messageOne.textContent = data.error);
+        return (messageError.textContent = data.error);
       }
-      search = "";
+
       messageOne.textContent = data.location;
       messageTwo.textContent = data.forecastSummary;
       messageThree.textContent = data.forecastCurrentTemperature;
+      messageFour.textContent = data.forecastCurrentSummary;
+      messageFive.textContent = data.forecastPreciptProbability;
+      messageSix.textContent = data.forecastWind;
+      messageSeven.textContent = data.forecastLowTemperature;
+      messageEight.textContent = data.forecastHighTemperature;
+
+      weatherData.style.display = "flex";
+
       switch (data.forecastIcon) {
         case "rain":
           iconWeather.src = "img/rain-icons.png";
@@ -74,6 +100,8 @@ weatherForm.addEventListener("submit", event => {
         case "tornado":
           iconWeather.src = "img/tornado-icons.png";
           break;
+        default:
+          iconWeather.src = "";
       }
     });
   });

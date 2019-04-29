@@ -24,9 +24,6 @@ Write at least ten user stories relevant to your idea. Be sure they follow the f
 
 For at least one of your user roles, choose a person's name to represent that persona. Write at least a sentence or two for that persona that describes the person it's meant to represent.
 
-1. As Sunny, I want to be able to see weather in my location without typing when I first visit the browser.
+Mary is a junior college student. Besides taking college courses, she starts her part time job as fashion blogger. Staying on trend and wearing appropriately are her main keys to attract readers. She uses the app to stay aware of current weather. Therefore, she needs to stay alert with the weather, make sure what she has is good for a day. Mary would like to know the weather of her next shooting location, containing info such as high/low tem, rain possibility, wind, etc.
 
-2. As Sunny, I want to be able to see weather for my next trip in California in 10 days.
-
-3. As Sunny, I want to receive errors if the application runs into errors.
 

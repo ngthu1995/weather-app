@@ -40,7 +40,7 @@ app.get("/about", (req, res) => {
 app.get("/help", (req, res) => {
   res.render("help", {
     message:
-      "Run into errors? Have questions about the application? Don't hesistate to let me know your opinion to",
+      "Run into errors? Have questions about the application? Don't hesitate to let me know your opinion to",
     title: "Help",
     name: "Thu Nguyen"
   });

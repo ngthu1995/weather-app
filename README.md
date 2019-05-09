@@ -1,8 +1,10 @@
 # Anisoptera
 
-Weather app fetching real-time weather using data APIs from mapbox.com and darksky.net, along with Node.js and Express library.
+Simple weather app fetching real-time weather using data APIs from mapbox.com and darksky.net, along with Node.js and Express library.
 
 All users are able to see the real-time weather of specific location they search, including summary data, precipitation, wind speed, lowest and highest temperature of the day.
+
+Anisoptera means dragonfly in Greek. Dragonfly Weather Changes in temperature are known to influence behaviors such as the time of day that a species normally flies, flight activity levels throughout the day, and the postures of dragonflies. The higher dragonflies fly, the hotter temperature is. The lower dragonflies fly, the higher chance it rains.
 
 ### Completed:
 
@@ -14,112 +16,95 @@ The website is responsive & scalable.
 
 ![Main site](/public/img/weatherapp.png "Screenshot of the application")
 
-### In progress & future:
+### Deployment:
 
-The cart needs to fetch all info from authenticated user's cart
-Users are able to purchase items and show up in history puschase
-The users are able to see his/her own info and edit if possible.
-The list view should look a little more organized.
-The site needs to be responsive and more cohesive.
-
-The demo site can be viewed here: https://hidden-falls-31883.herokuapp.com/
-
-_Admin role demo account: francis4@gmail.com_
-_Admin role demo password: password1234_
+The demo site can be viewed here: https://ngthu1995-weather-app.herokuapp.com/
 
 ## Getting Started
 
 Node.js installed
-React installed
-Nodemon installed
 
 ## Technologies & Tools
 
 - NodeJs
 - Express
 - HTML/CSS
-- MongoDB
-- Material-UI
-- React
-- Redux
+- DOM Manipulation
+- Jasmine
 
 ## Prerequisites
 
-Understanding of MongoDB, Express, React, NodeJS (MERN) along with knowledge of Heroku + Mlab
+Basic understanding of HTM, CSS and Node.js
 
 ### Installing
 
 1. Clone the repo to your local machine \
-   `$ git clone https://github.com/ngthu1995/troo`
+   `$ git clone https://github.com/ngthu1995/weather-app`
 
-2. Install dependencies on server: \
-   `$ cd troo/server` \
+2. Install dependencies: \
    `$ npm install`
 
-3. Install dependencies on client: \
-   `$ cd troo/client`\
-   `$ npm install`
-
-4. Install nodemon globally \
-   `npm install -g nodemon`
-
-5. Start server: \
+3. Start server: \
    `$ npm start`
 
-6. Start client:\
-   `$ npm client`
+4. Run test: \
+   `$ npm test`
 
-7. Or Run server and client at the same time after installing _concurrently_ \
-   `$ npm run dev`
-
-8. App now running on
+5. App now running on localhost:3000
 
 ## Running the tests
 
-Test Driven Development (TDD) is used throughout the application ultitlizing Mocha and Chai.
-Tests can be performed by running _npm test_ or _mocha_
+Test Driven Development (TDD) is used throughout the application ultitlizing Jasmine.
+Tests can be performed by running _npm test_
 
 Below are two examples of tests:
 
 ```
-describe("GET /", function() {
-  // #1 should return home page
+describe("utils : geocode", () => {
+  describe("valid locations", () => {
+    const url =
+      "https://api.mapbox.com/geocoding/v5/mapbox.places/seattle.json?access_token=pk.eyJ1Ijoibmd0aHUxOTk1IiwiYSI6ImNqdHVyemE0MTAyMGw0YXJ6eDM5c2hwM2UifQ.cOwGWnb_rOCTJIDP9g9Jng";
 
-  it("should return home page", function(done) {
-    // calling home page api
-    request.get("/", (err, res) => {
-      expect(200);
-      done();
+    it("should return the latitude and longitude if the location is valid", done => {
+      request(url, (error, res) => {
+        const data = JSON.parse(res.body);
+        expect(res.statusCode).toBe(200);
+        expect(data.features[0].place_name).toContain("Seattle");
+        done();
+      });
     });
   });
-});
 
-describe("GET /abc", function() {
-  // #1 should return 404
-
-  it("should return home 404", function(done) {
-    // calling home page api with invalid query
-    request.get("/abc", (err, res) => {
-      expect(404);
-      done();
+  describe("utils : forecast", () => {
+  describe("valid coordinates", () => {
+    const url =
+      "https://api.darksky.net/forecast/2a2f162c8c31c2a2af7083c5d6b1d79c/37.8267,-122.4233";
+    it("should return the current timezone", done => {
+      request(url, (error, res) => {
+        const data = JSON.parse(res.body);
+        expect(res.statusCode).toBe(200);
+        expect(data.timezone).toBe("America/Los_Angeles");
+        done();
+      });
     });
   });
-});
 ```
 
 ## Deployment
 
-The site is deployed with Heroku and Mlab adds-on.
+The site is deployed with Heroku.
 
 ## Built With
 
-MERN - The web framework used
+Node.js
 
 ## Versioning
 
-Node: 10.15.0
-_material-ui/core: 3.9.3_
-_babel/runtime": 7.4.3_
+- Node: 10.15.0
+- Express: 4.16.4
+- hbs: 4.0.3
+- request: 2.88.0
+- jasmine": 3.0.0
 
 ## Author
 

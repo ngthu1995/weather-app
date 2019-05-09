@@ -7,13 +7,13 @@ const geocode = require("../src/utils/geocode");
 describe("utils : geocode", () => {
   describe("valid locations", () => {
     const url =
-      "https://api.mapbox.com/geocoding/v5/mapbox.places/newyork.json?access_token=pk.eyJ1Ijoibmd0aHUxOTk1IiwiYSI6ImNqdHVyemE0MTAyMGw0YXJ6eDM5c2hwM2UifQ.cOwGWnb_rOCTJIDP9g9Jng";
+      "https://api.mapbox.com/geocoding/v5/mapbox.places/seattle.json?access_token=pk.eyJ1Ijoibmd0aHUxOTk1IiwiYSI6ImNqdHVyemE0MTAyMGw0YXJ6eDM5c2hwM2UifQ.cOwGWnb_rOCTJIDP9g9Jng";
 
     it("should return the latitude and longitude if the location is valid", done => {
       request(url, (error, res) => {
         const data = JSON.parse(res.body);
         expect(res.statusCode).toBe(200);
-        expect(data.features[0].place_name).toContain("Newyork");
+        expect(data.features[0].place_name).toContain("Seattle");
         done();
       });
     });

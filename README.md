@@ -18,8 +18,6 @@ The website is responsive & scalable.
 
 ### Deployment:
 
-The demo site can be viewed here: https://ngthu1995-weather-app.herokuapp.com/
-
 ## Getting Started
 
 Node.js installed
